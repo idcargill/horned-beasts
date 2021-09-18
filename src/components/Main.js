@@ -1,5 +1,6 @@
 import React from 'react';
-import HornedBeasts from './HornedBeasts';
+import HornedBeasts from './HornedBeasts.js';
+import BeastList from './BeastList.js';
 
 class Main extends React.Component{
     render() {
@@ -7,15 +8,17 @@ class Main extends React.Component{
             <>
               <HornedBeasts 
                 title='Fanged Cat' 
-                url='https://via.placeholder.com/150' 
-                description='Big Fangs'/>
+                src='https://via.placeholder.com/150' 
+                description='Purring Death'/>
               <HornedBeasts 
                 title='Dog & Jackalope Hybrid'
-                url='https://via.placeholder.com/150'
+                src='https://via.placeholder.com/150'
                 description='A huge horned animal that likes bacon.'/>
+            <BeastList />
             </>
+            
         )
     }
 }
 
-export default Main;
+export default Main; 
