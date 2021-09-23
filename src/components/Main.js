@@ -1,24 +1,23 @@
 import React from 'react';
 import HornedBeasts from './HornedBeasts.js';
-import BeastList from './BeastList.js';
+import data from '../data/data.json';
 
-class Main extends React.Component{
-    render() {
-        return (
-            <>
-              <HornedBeasts 
-                title='Fanged Cat' 
-                src='https://via.placeholder.com/150' 
-                description='Purring Death'/>
-              <HornedBeasts 
-                title='Dog & Jackalope Hybrid'
-                src='https://via.placeholder.com/150'
-                description='A huge horned animal that likes bacon.'/>
-            <BeastList />
-            </>
-            
-        )
-    }
+class Main extends React.Component {
+  render() {
+    return (
+      <>
+        {data.map((i, idx) => (
+          <HornedBeasts
+            key={idx}
+            title={i.title}
+            description={i.description}
+            image={i.image_url}
+            alt={i.keyword}
+          />
+        ))}
+      </>
+    );
+  }
 }
 
-export default Main; 
+export default Main;
