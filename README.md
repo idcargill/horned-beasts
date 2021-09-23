@@ -3,7 +3,7 @@
 ## Feature #1: Display images
 
 - Estimated Time: 1 hr
-- Start Time: 9pm
+- Start Time: 900pm
 - Finish Time: 9:30pm
 - Actual time to complete: 30 minutes
 
@@ -16,14 +16,14 @@
 
 ## Feature 3: Bootstrap
 
-- Estimated Time:
-- Start Time:
-- Finish Time:
-- Actual time to complete:
+- Estimated Time: 1 hour
+- Start Time: 8:00pm
+- Finish Time: 9:00pm
+- Actual time to complete: 1 hour
 
 ## Stretch Goal: Add Interaction
 
-- Estimated Time:
-- Start Time:
-- Finish Time:
-- Actual time to complete:
+- Estimated Time: 1hr
+- Start Time: 9:15pm
+- Finish Time: 9:50pm
+- Actual time to complete: 35 minutes
