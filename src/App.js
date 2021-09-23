@@ -6,11 +6,11 @@ import Footer from './components/Footer.js';
 function App() {
   return (
     <>
-    <div className='container'>
-    <Header />
-    <Main />
-    <Footer />
-    </div>
+      <div className='container'>
+        <Header header='Horned Beasts' />
+        <Main />
+        <Footer />
+      </div>
     </>
   );
 }
