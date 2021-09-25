@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 class HornedBeasts extends React.Component {
   constructor(props) {
@@ -19,12 +20,13 @@ class HornedBeasts extends React.Component {
         <Card
           bg='danger'
           text='white'
-          className='mb-2'
-          style={{ width: '20em', padding: '20px', margin: '20px' }}>
+          className='m-1'
+          style={{ width: '200px' }}>
           <Card.Img
-            alt={this.props.alt}
             src={this.props.image}
-            onClick={this.HandleClick}></Card.Img>
+            alt={this.props.alt}
+            onClick={this.HandleClick}
+            className='m-1'></Card.Img>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Footer>Like-O-meter &#10084; {this.state.favorite}</Card.Footer>

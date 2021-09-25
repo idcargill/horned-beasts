@@ -4,15 +4,15 @@ body{
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
-
+/* 
 .container {
   max-width: 800px;
   margin: auto;
-}
+} */
 
-.card {
+/* .card {
   margin: auto;
-}
+} */
 
 img {
   height: 200px;
