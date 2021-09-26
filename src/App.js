@@ -7,7 +7,6 @@ import SelectedBeast from './components/SelectedBeast.js';
 // CSS
 import './App.css';
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
 // DATA
 import dataJson from './data/data.json';
 

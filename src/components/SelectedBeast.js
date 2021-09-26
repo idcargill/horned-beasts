@@ -3,10 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import HornedBeasts from './HornedBeasts';
 import Button from 'react-bootstrap/Button';
 
-// data
-// show
-// beast.title
-
 class SelectedBeast extends React.Component {
   constructor(props) {
     super(props);
