@@ -23,6 +23,7 @@ class SelectedBeast extends React.Component {
           <Modal
             {...this.props}
             show={this.props.show}
+            className='modal-window'
             size='md'
             aria-labelledby='contained-modal-title-vcenter'
             centered>

@@ -1,18 +1,32 @@
+/*https://coolors.co/03071e-370617-6a040f-9d0208-d00000-dc2f02-e85d04-f48c06-faa307-ffba08 */
+
+:root {
+  --Xiketic: rgba(3, 7, 30, .5); 
+  --darkSienna: rgb(55, 6, 23);
+  --rosewood: rgb(106, 4, 15);
+  --darkRed: rgb(157, 2, 8);
+  --rossoCorsa: rgb(208, 0, 0);
+  --vermillion: rgb(220, 47, 2);
+  --persimmon: rgb(232, 93, 4);
+  --carrotOrange: rgb(244, 140, 6);
+  --orangeWeb: rgb(250, 163, 7);
+  --yellow: rgb(255, 186, 8);
+}
+
+
+
 body{
   min-width: 350px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
+  background-color: var(--rosewood);
 }
-/* 
-.container {
-  max-width: 800px;
-  margin: auto;
-} */
 
-/* .card {
+
+.card {
   margin: auto;
-} */
+}
 
 img {
   height: 200px;
@@ -20,9 +34,6 @@ img {
   cursor:  pointer
 }
 
-.card-text{
-  height:75px;
-}
 
 .header,
 .footer {
@@ -38,4 +49,35 @@ img {
   cursor: pointer;
 }
 
+
+.modal-window{
+  background-color: var(--Xiketic);
+}
+
+.modal-body {
+  margin: auto;
+}
+
+.modal-content {
+  background-color: var(--persimmon);
+  border-radius: 10%;
+}
+
+.modal-content button {
+  background-color: var(--darkSienna);
+  border-radius: 75%;
+  margin: auto;
+}
+
+.modal-body card{
+  width: 300px;
+}
+
+.card {
+  background-color: var(--vermillion);
+}
+
+.card-text{
+  height: 150px;
+}
 

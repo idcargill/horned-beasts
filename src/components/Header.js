@@ -6,7 +6,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       text: '',
-      variant: 'primary',
+      variant: 'dark',
     };
   }
 

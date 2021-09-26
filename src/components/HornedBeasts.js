@@ -17,11 +17,7 @@ class HornedBeasts extends React.Component {
   render() {
     return (
       <>
-        <Card
-          bg='danger'
-          text='white'
-          className='m-1'
-          style={{ width: '200px' }}>
+        <Card text='white' className='m-1 p-3' style={{ width: '200px' }}>
           <Card.Img
             src={this.props.image}
             alt={this.props.alt}
