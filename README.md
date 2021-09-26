@@ -10,6 +10,6 @@
 ## Feature 2: Fuzzy Search
 
 - Estimated Time: 1 hour
-- Start Time:
+- Start Time: 12:55pm
 - Finish Time:
 - Actual time to complete:
