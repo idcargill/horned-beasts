@@ -6,11 +6,15 @@
 - Start Time: 1:00pm
 - Finish Time: 5:00pm
 - Actual time to complete: 4 hours
-- Review: A typo (MOdal vs Modal) bug, State rendering loopholes (go back to the 'root' state, don't modify lower.  Bootstrap docs.
 
 ## Feature 2: Fuzzy Search
 
 - Estimated Time: 1 hour
-- Start Time: 12:55pm
-- Finish Time:
-- Actual time to complete:
+- Start Time: 6:30pm
+- Finish Time: 7:20pm
+- Actual time to complete: 50 minutes
+
+### Issues
+
+- A typo threw off the itterating through handling state/props management.
+- Manage state at the highest level possible and pass down. Possible state/render loops are possible.
