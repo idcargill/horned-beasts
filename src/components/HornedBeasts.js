@@ -8,11 +8,9 @@ class HornedBeasts extends React.Component {
   };
 
   render() {
-    let name = this.props.title;
-    // console.log(name);
-    
-
+    console.log(this.props.totalLikes);
     let likes = 0;
+    let name = this.props.title;
     (this.props.totalLikes[name] == undefined) ? likes = 0 : likes= this.props.totalLikes[name]; 
 
     return (

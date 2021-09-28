@@ -33,9 +33,7 @@ class App extends React.Component {
 
   // Top Level Scope Object
   beastLikes = (name) => {
-    (!this.state.totalLikes[name]) ? this.setState({totalLikes: {[name]: 1}}) : this.setState({totalLikes: {[name]:this.state.totalLikes[name] +1 }})
-    
-      // this.setState({beastLikes: {[name]: this.state.beastLikes[name] + 1}})
+    (!this.state.totalLikes[name]) ? this.setState({totalLikes: {[name]: 1}}) : this.setState({totalLikes: {[name]:this.state.totalLikes[name] +1 }})  
     console.log(name);
     console.log(this.state.totalLikes)
   }
