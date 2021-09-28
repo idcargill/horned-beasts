@@ -9,14 +9,17 @@ import Container from 'react-bootstrap/Container';
 class Main extends React.Component {
   render() {
     const CardsArr = () =>
-      this.props.data.map((i, idx) => (
+      this.props.data.map((data, idx) => (
         <HornedBeasts
           key={idx}
-          title={i.title}
-          description={i.description}
-          image={i.image_url}
-          alt={i.keyword}
+          title={data.title}
+          description={data.description}
+          image={data.image_url}
+          alt={data.keyword}
           toggleModal={this.props.toggleModal}
+          handleLikes={this.props.handleLikes}
+          beastLikes={this.props.beastLikes}
+          totalLikes={this.props.totalLikes}
         />
       ));
 

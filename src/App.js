@@ -18,22 +18,28 @@ class App extends React.Component {
       show: false,
       data: dataJson,
       beastTitle: 'none',
-      selectedAnimal: '',
-    };
+      selectedAnimal: {},
+      totalLikes: {},
+        };
   }
 
-  toggleModal = (beastTitle) => {
+  toggleModal = (beastDetails) => {
     this.state.show
       ? this.setState({ show: false })
       : this.setState({ show: true });
 
-    this.state.data.forEach((beast) => {
-      if (beast.title === beastTitle) {
-        this.setState({ selectedAnimal: beast });
-        console.log(this.state);
-      }
-    });
+      this.setState({ selectedAnimal: beastDetails});
   };
+
+  // Top Level Scope Object
+  beastLikes = (name) => {
+    (!this.state.totalLikes[name]) ? this.setState({totalLikes: {[name]: 1}}) : this.setState({totalLikes: {[name]:this.state.totalLikes[name] +1 }})
+    
+      // this.setState({beastLikes: {[name]: this.state.beastLikes[name] + 1}})
+    console.log(name);
+    console.log(this.state.totalLikes)
+  }
+
 
   searchUpdate = (input) => {
     let results = dataJson;
@@ -42,7 +48,6 @@ class App extends React.Component {
     results = dataJson.filter(
       (words) => regex.test(words.description) || regex.test(words.keyword)
     );
-    console.log(regex, results);
     if (results.length < 1) {
       results = dataJson;
     }
@@ -55,13 +60,20 @@ class App extends React.Component {
         <Container fluid>
           <Header header='Horned Beasts' />
           <SearchBar searchUpdate={this.searchUpdate} />
+          <Main 
+          data={this.state.data} 
+          toggleModal={this.toggleModal} 
+          beastLikes={this.beastLikes}
+          totalLikes={this.state.totalLikes}
+          />
           <SelectedBeast
             show={this.state.show}
             toggleModal={this.toggleModal}
-            data={this.state.data}
             selectedAnimal={this.state.selectedAnimal}
+            handleLikes={this.handleLikes}
+            beastLikes={this.beastLikes}
+            totalLikes={this.state.totalLikes}
           />
-          <Main data={this.state.data} toggleModal={this.toggleModal} />
           <Footer />
         </Container>
       </>
