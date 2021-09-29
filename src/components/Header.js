@@ -30,6 +30,7 @@ class Header extends React.Component {
           onClick={this.HandleClick}>
           <Alert.Heading>{this.props.header}</Alert.Heading>
           <p>{this.state.text}</p>
+
         </Alert>
       </>
     );

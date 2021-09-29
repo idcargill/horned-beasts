@@ -34,6 +34,10 @@ img {
   cursor:  pointer
 }
 
+.header {
+  min-height: 100px;
+}
+
 
 .header,
 .footer {
@@ -81,3 +85,15 @@ img {
   height: 150px;
 }
 
+.input-form {
+  text-align: center;
+  background-color: var(--carrotOrange);
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.form-select,
+.input-group-text{
+  width: 200px;
+  margin: 10px;
+}

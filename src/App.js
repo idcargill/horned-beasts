@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header.js';
 import SearchBar from './components/SearchBar.js';
 import Main from './components/Main.js';
+import InputForm from './components/InputForm.js';
 import Footer from './components/Footer.js';
 import SelectedBeast from './components/SelectedBeast.js';
 // CSS
@@ -42,19 +43,25 @@ class App extends React.Component {
     results = dataJson.filter(
       (words) => regex.test(words.description) || regex.test(words.keyword)
     );
-    console.log(regex, results);
     if (results.length < 1) {
       results = dataJson;
     }
     this.setState({ data: results });
   };
 
+  searchHorns = (e) => {
+    let num = e.target.value;
+    console.log(num);
+    let results = dataJson.filter((beast) => beast.horns >= num);
+    this.setState({data:results})
+  }
+
   render() {
     return (
       <>
         <Container fluid>
-          <Header header='Horned Beasts' />
-          <SearchBar searchUpdate={this.searchUpdate} />
+          <Header header='Welcome to the Gallery of Horns' />
+          <InputForm searchUpdate={this.searchUpdate} searchHorns={this.searchHorns}/>
           <SelectedBeast
             show={this.state.show}
             toggleModal={this.toggleModal}
