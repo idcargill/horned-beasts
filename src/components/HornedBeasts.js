@@ -8,9 +8,8 @@ class HornedBeasts extends React.Component {
   };
 
   render() {
-    console.log(this.props.totalLikes);
-    let likes = 0;
     let name = this.props.title;
+    let likes = this.props.totalLikes[name];
     (this.props.totalLikes[name] == undefined) ? likes = 0 : likes= this.props.totalLikes[name]; 
 
     return (
@@ -26,9 +25,9 @@ class HornedBeasts extends React.Component {
           <Card.Footer>
             <p className='text-center'>Like-O-meter</p>
             <p className='text-center'>
-              <span className='m-1 like-meter' onClick={this.addLike}>
+              <span className='m-1 like-meter' onClick={this.props.beastLikes(name)}>
                 &#10084;
-                <span>{this.props.totalLikes[name]}</span>
+                <span>{likes}</span>
               </span>
             </p>
           </Card.Footer>

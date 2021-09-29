@@ -26,6 +26,8 @@ class SelectedBeast extends React.Component {
                 image={this.props.selectedAnimal.image}
                 alt={this.props.selectedAnimal.keyword}
                 toggleModal={this.props.toggleModal}
+                totalLikes={this.props.totalLikes}
+
               />
             </Modal.Body>
             <Modal.Footer>

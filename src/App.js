@@ -7,7 +7,6 @@ import SelectedBeast from './components/SelectedBeast.js';
 // CSS
 import './App.css';
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
 // DATA
 import dataJson from './data/data.json';
 
@@ -31,10 +30,13 @@ class App extends React.Component {
       this.setState({ selectedAnimal: beastDetails});
   };
 
-  // Top Level Scope Object
+  // Top Level Likes Scope Object
   beastLikes = (name) => {
-    (!this.state.totalLikes[name]) ? this.setState({totalLikes: {[name]: 1}}) : this.setState({totalLikes: {[name]:this.state.totalLikes[name] +1 }})  
-    console.log(name);
+    if (!this.state.totalLikes[name]) {
+      this.setState({totalLikes: this.state.totalLikes[name] = 1});
+    } else {
+      this.setState({totalLikes:  this.state.totalLikes[name] = this.state.totalLikes[name] + 1 });
+    }
     console.log(this.state.totalLikes)
   }
 
