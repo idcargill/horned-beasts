@@ -10,9 +10,9 @@ class InputForm extends React.Component{
       <div className='input-form container'>
         <Form size='sm' className='m-3 p-3'>
           <h2>Beast Filter</h2>
-          <Form.Group>
-            <SearchBar searchUpdate={this.props.searchUpdate} />
-            <Form.Select onInput={this.props.searchHorns}>
+          <Form.Group controlId='formInput' onInput={this.props.searchForm}>
+            <SearchBar searchUpdate={this.props.searchUpdate} searchForm={this.props.searchForm} />
+            <Form.Select>
               <option value='1'>Sort by # of Horns</option>
               <option value='1'>One</option>
               <option value='2'>Two</option>
