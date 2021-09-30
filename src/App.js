@@ -66,18 +66,14 @@ class App extends React.Component {
   }
   
   updateLikes = (name) => {
-    let likeCount = {...this.state.totalLikes }
-    if (!likeCount[name]) {
-      likeCount[name] = 1;
-    } else {
-      likeCount[name] = likeCount[name] + 1;
-    }
+    let newState = this.state.totalLikes;
 
-    // this.setState({totalLikes: {
-    //     ...this.state.totalLikes[name],
-    //     name: likeCount
-    //   }
-    // })
+    if (!newState[name]) {
+      newState[name] = 1;
+    } else {
+      newState[name] = newState[name] + 1;
+    }
+    this.setState({totalLikes: newState})
   }
   
   
@@ -94,8 +90,13 @@ class App extends React.Component {
             data={this.state.data}
             selectedAnimal={this.state.selectedAnimal}
             updateLikes={this.updateLikes}
+            totalLikes={this.state.totalLikes}
           />
-          <Main data={this.state.data} toggleModal={this.toggleModal} updateLikes={this.updateLikes}/>
+          <Main 
+          data={this.state.data} 
+          toggleModal={this.toggleModal} 
+          updateLikes={this.updateLikes}
+          totalLikes={this.state.totalLikes}/>
           <Footer />
         </Container>
       </>

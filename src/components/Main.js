@@ -18,6 +18,7 @@ class Main extends React.Component {
           alt={i.keyword}
           toggleModal={this.props.toggleModal}
           updateLikes={this.props.updateLikes}
+          totalLikes={this.props.totalLikes}
         />
       ));
 
