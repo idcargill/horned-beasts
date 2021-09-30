@@ -13,6 +13,7 @@ class HornedBeasts extends React.Component {
   HandleClick = () => {
     this.setState({ favorite: this.state.favorite + 1 });
   };
+  
 
   render() {
     return (
@@ -25,7 +26,7 @@ class HornedBeasts extends React.Component {
             className='m-1'></Card.Img>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
-          <Card.Footer>
+          <Card.Footer >
             <p className='text-center'>Like-O-meter</p>
             <p className='text-center'>
               <span className='m-1 like-meter' onClick={this.HandleClick}>
@@ -41,6 +42,8 @@ class HornedBeasts extends React.Component {
 }
 
 export default HornedBeasts;
+
+// onClick={() =>this.props.updateLikes(this.props.title)
 
 /*
 &#10084;

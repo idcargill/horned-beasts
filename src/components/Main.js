@@ -17,6 +17,7 @@ class Main extends React.Component {
           image={i.image_url}
           alt={i.keyword}
           toggleModal={this.props.toggleModal}
+          updateLikes={this.props.updateLikes}
         />
       ));
 

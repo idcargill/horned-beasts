@@ -19,6 +19,7 @@ class App extends React.Component {
       data: dataJson,
       beastTitle: 'none',
       selectedAnimal: '',
+      totalLikes: {}
     };
   }
 
@@ -35,7 +36,8 @@ class App extends React.Component {
     });
   };
 
-
+  
+  
   searchUpdate = (e) => {
     e.preventDefault();
     // id='text or Horns'
@@ -50,7 +52,7 @@ class App extends React.Component {
       regex = new RegExp(searchWord, 'gi');
       let textResults = dataJson.filter((words) => ( (regex.test(words.description)) || (regex.test(words.keyword))) );
       this.setState({data: textResults})
-
+      
       // Enter Horns Search
     } else if (e.target.id === 'horns') {
       // Reset Text field
@@ -60,12 +62,27 @@ class App extends React.Component {
       let hornResults = dataJson.filter((beast) => beast.horns >= hornCount);
       this.setState({data: hornResults});
     }
-
+    
   }
   
+  updateLikes = (name) => {
+    let likeCount = {...this.state.totalLikes }
+    if (!likeCount[name]) {
+      likeCount[name] = 1;
+    } else {
+      likeCount[name] = likeCount[name] + 1;
+    }
 
+    // this.setState({totalLikes: {
+    //     ...this.state.totalLikes[name],
+    //     name: likeCount
+    //   }
+    // })
+  }
+  
   
   render() {
+    console.log(this.state.totalLikes);
     return (
       <>
         <Container fluid>
@@ -76,8 +93,9 @@ class App extends React.Component {
             toggleModal={this.toggleModal}
             data={this.state.data}
             selectedAnimal={this.state.selectedAnimal}
+            updateLikes={this.updateLikes}
           />
-          <Main data={this.state.data} toggleModal={this.toggleModal} />
+          <Main data={this.state.data} toggleModal={this.toggleModal} updateLikes={this.updateLikes}/>
           <Footer />
         </Container>
       </>
