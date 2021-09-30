@@ -3,19 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import HornedBeasts from './HornedBeasts';
 import Button from 'react-bootstrap/Button';
 
-// data
-// show
-// beast.title
-
 class SelectedBeast extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: true,
-      selectedAnimal: 'none',
-    };
-  }
-
+ 
   render() {
     if (this.props.show) {
       return (
@@ -27,7 +16,6 @@ class SelectedBeast extends React.Component {
             size='md'
             aria-labelledby='contained-modal-title-vcenter'
             centered>
-            {/* <Modal.Title>beast</Modal.Title> */}
             <Modal.Body>
               <HornedBeasts
                 key={'1'}

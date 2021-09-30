@@ -19,7 +19,6 @@ class App extends React.Component {
       data: dataJson,
       beastTitle: 'none',
       selectedAnimal: '',
-      sortBy: 'text'
     };
   }
 
@@ -36,41 +35,42 @@ class App extends React.Component {
     });
   };
 
-  searchForm = (e) => {
-    // Search By Horns
-    if (parseInt(e.target.value)) {
-      this.setState({sortBy: 'horns'})
-      // Sort Horns
-      let num = e.target.value;
-      let results = dataJson.filter((beast) => beast.horns >= num);
-      this.setState({data:results})
-    } else {
-      this.setState({sortBy: 'text'})
-      console.log(this.state.sortBy)
-    }
-  }
 
   searchUpdate = (e) => {
-      let results = dataJson;
-      let searchWord = e.target.value;
-      let regex = new RegExp(searchWord, 'gi');
-      results = dataJson.filter(
-        (words) => regex.test(words.description) || regex.test(words.keyword)
-        );
-        if (results.length < 1) {
-          results = dataJson;
-        }
-        this.setState({ data: results });
+    e.preventDefault();
+    // id='text or Horns'
+    let regex = '';
+    let searchWord ='';
+    // Enter Text Search
+    if (e.target.id === 'text') {
+      // restet horns field 
+      let h = document.querySelector('#horns');
+      h.value = '1';
+      searchWord = e.target.value;
+      regex = new RegExp(searchWord, 'gi');
+      let textResults = dataJson.filter((words) => ( (regex.test(words.description)) || (regex.test(words.keyword))) );
+      this.setState({data: textResults})
 
+      // Enter Horns Search
+    } else if (e.target.id === 'horns') {
+      // Reset Text field
+      let t = document.querySelector('#text');
+      t.value= '';
+      let hornCount = parseInt(e.target.value);
+      let hornResults = dataJson.filter((beast) => beast.horns >= hornCount);
+      this.setState({data: hornResults});
     }
 
+  }
+  
 
+  
   render() {
     return (
       <>
         <Container fluid>
           <Header header='Welcome to the Gallery of Horns' />
-          <InputForm searchUpdate={this.searchUpdate} searchByText={this.state.searchByText}/>
+          <InputForm searchUpdate={this.searchUpdate}/>
           <SelectedBeast
             show={this.state.show}
             toggleModal={this.toggleModal}
