@@ -21,7 +21,7 @@ class HornedBeasts extends React.Component {
           <Card.Img
             src={this.props.image}
             alt={this.props.alt}
-            onClick={() => this.props.toggleModal(this.props.title)}
+            onClick={() => {this.props.toggleModal(this.props.title)}}
             className='m-1'></Card.Img>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>

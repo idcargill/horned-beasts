@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from './components/Header.js';
-import SearchBar from './components/SearchBar.js';
 import Main from './components/Main.js';
+import InputForm from './components/InputForm.js';
 import Footer from './components/Footer.js';
 import SelectedBeast from './components/SelectedBeast.js';
 // CSS
 import './App.css';
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
 // DATA
 import dataJson from './data/data.json';
+// import { Form } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor() {
@@ -35,26 +35,42 @@ class App extends React.Component {
     });
   };
 
-  searchUpdate = (input) => {
-    let results = dataJson;
-    let searchWord = input.target.value;
-    let regex = new RegExp(searchWord, 'gi');
-    results = dataJson.filter(
-      (words) => regex.test(words.description) || regex.test(words.keyword)
-    );
-    console.log(regex, results);
-    if (results.length < 1) {
-      results = dataJson;
-    }
-    this.setState({ data: results });
-  };
 
+  searchUpdate = (e) => {
+    e.preventDefault();
+    // id='text or Horns'
+    let regex = '';
+    let searchWord ='';
+    // Enter Text Search
+    if (e.target.id === 'text') {
+      // restet horns field 
+      let h = document.querySelector('#horns');
+      h.value = '1';
+      searchWord = e.target.value;
+      regex = new RegExp(searchWord, 'gi');
+      let textResults = dataJson.filter((words) => ( (regex.test(words.description)) || (regex.test(words.keyword))) );
+      this.setState({data: textResults})
+
+      // Enter Horns Search
+    } else if (e.target.id === 'horns') {
+      // Reset Text field
+      let t = document.querySelector('#text');
+      t.value= '';
+      let hornCount = parseInt(e.target.value);
+      let hornResults = dataJson.filter((beast) => beast.horns >= hornCount);
+      this.setState({data: hornResults});
+    }
+
+  }
+  
+
+  
   render() {
     return (
       <>
         <Container fluid>
-          <Header header='Horned Beasts' />
-          <SearchBar searchUpdate={this.searchUpdate} />
+          <Header header='Welcome to the Gallery of Horns' />
+          <InputForm searchUpdate={this.searchUpdate}/>
           <SelectedBeast
             show={this.state.show}
             toggleModal={this.toggleModal}

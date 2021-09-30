@@ -6,9 +6,9 @@ class SearchBar extends React.Component {
   render() {
     return (
       <>
-        <InputGroup size='sm' id='form'>
-          <InputGroup.Text id='search' className='m-3'>
-            <FormControl
+        <InputGroup size='sm'>
+          <InputGroup.Text >
+            <FormControl 
               onChange={this.props.searchUpdate}
               placeholder='search the beasts'
             />
